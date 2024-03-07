@@ -1,0 +1,38 @@
+.main{
+    /* border: 2px solid white; */
+    /* padding: 120px 30px ; */
+    height: 800px;
+    width: 600px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    background:rgb(81, 78, 78);
+}
+h2{
+    font-size: 3rem;
+}
+
+.input{
+    display: flex;
+    justify-content: space-around;
+}
+
+.input input{
+    padding: 18px;
+    outline: none;
+}
+h4{
+    margin-top: 60px;
+}
+li{
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    flex-wrap: wrap;
+    margin-right: 20px;
+}
+.task{
+    font-size: 3rem;
+
+}

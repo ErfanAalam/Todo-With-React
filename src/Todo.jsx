@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import '/src/Todo.css'
 
 function Todo() {
   const [todos, settodo] = useState([{ task: "sample task", id: uuidv4(), isdone:false },]);
@@ -17,7 +18,7 @@ function Todo() {
   };
 
   let handledelete = (id) => {
-    settodo((prevtodo) => todos.filter((prevtodo) => prevtodo.id != id));
+    settodo(() => todos.filter((prevtodo) => prevtodo.id != id));
   };
 
   let uppercaseall = () => {
@@ -63,42 +64,44 @@ function Todo() {
 
   return (
     <>
-      <h2>Todo list</h2>
+     <div className="main">
+     <h2>Todo list</h2>
       <div className="container">
+        <div className="input">
         <input
           type="text"
           placeholder="Write a task..."
           value={newtodo}
           onChange={updatetodo}
         />
-        <br />
-        <br />
-        <br />
+        
         <button onClick={addnewtask}>Submit</button>
-        <br /> <br />
+        </div>
+       
         <h4>Tasks</h4>
         <ul>
           {todos.map((todo) => (
             <li key={todo.id}>
+              <div className="task">
               <span
-                style={todo.isdone ? { textDecorationLine: "line-through" } : {}}
-              >
+                style={todo.isdone ? { textDecorationLine: "line-through" } : {}}>
                 {todo.task}
               </span>
+              </div>
               &nbsp; &nbsp; &nbsp;
-              <button onClick={() => handledelete(todo.id)}>X</button>
+              <button onClick={() => handledelete(todo.id)} className="close">X</button>
               &nbsp; &nbsp; &nbsp;
-              <button onClick={() => uppercaseone(todo.id)}>
+              <button onClick={() => uppercaseone(todo.id)} className="upper">
                 Uppercase one
               </button>
               &nbsp; &nbsp; &nbsp;
-              <button onClick={() =>checked(todo.id)}>checked</button>
+              <button onClick={() =>checked(todo.id)} className="checked">checked</button>
             </li>
           ))}
         </ul>
-        <br /> <br />
         <button onClick={uppercaseall}>Uppercase All</button>
       </div>
+     </div>
     </>
   );
 }
