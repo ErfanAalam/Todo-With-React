@@ -89,17 +89,17 @@ function Todo() {
               </span>
               </div>
               &nbsp; &nbsp; &nbsp;
-              <button onClick={() => handledelete(todo.id)} className="close">X</button>
+              <button onClick={() => handledelete(todo.id)} className="close">Clear</button>
               &nbsp; &nbsp; &nbsp;
-              <button onClick={() => uppercaseone(todo.id)} className="upper">
+              {/* <button onClick={() => uppercaseone(todo.id)} className="upper">
                 Uppercase one
               </button>
-              &nbsp; &nbsp; &nbsp;
+              &nbsp; &nbsp; &nbsp; */}
               <button onClick={() =>checked(todo.id)} className="checked">checked</button>
             </li>
           ))}
         </ul>
-        <button onClick={uppercaseall}>Uppercase All</button>
+        {/* <button onClick={uppercaseall}>Uppercase All</button> */}
       </div>
      </div>
     </>

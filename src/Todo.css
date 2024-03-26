@@ -1,6 +1,4 @@
 .main{
-    /* border: 2px solid white; */
-    /* padding: 120px 30px ; */
     height: 800px;
     width: 600px;
     overflow-y: scroll;
@@ -31,6 +29,7 @@ li{
     padding: 20px;
     flex-wrap: wrap;
     margin-right: 20px;
+    margin-top: 20px;
 }
 .task{
     font-size: 3rem;
